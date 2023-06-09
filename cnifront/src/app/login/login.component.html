@@ -1,0 +1,51 @@
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-10">
+        <div class="wrap d-md-flex">
+          <div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
+            <div class="text w-100">
+              <h2>Bienvenue sur notre application</h2>
+              <p>Vous voulez consulter notre site web?</p>
+              <a class="btn btn-white btn-outline-white" href="http://www.cni.tn/index.php/fr/?view=page&id=44">cliquer ici</a>
+            </div>
+          </div>
+          <div class="login-wrap p-4 p-lg-5">
+            <div class="d-flex">
+              <div class="w-100">
+                <img src="./assets/cni.jpg" alt="" style="display: block; margin: auto;;width:180px">
+              </div>
+            </div>
+            <form class="signin-form" *ngIf="!isLoggedIn" name="form" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+              <div class="form-group mb-3">
+                <label class="label">Login</label>
+                <input type="text" id="username" class="form-control" name="username" [(ngModel)]="form.username" required #username="ngModel" placeholder="Login">
+              </div>
+              <div class="form-group mb-3">
+                <label class="label">Mot de passe</label>
+                <input type="password" id="password" class="form-control" name="password" [(ngModel)]="form.password"  minlength="8"
+                       #password="ngModel" placeholder="Mot de passe">
+              </div>
+              <div class="form-group">
+                <button class="form-control btn btn-primary submit px-3">Se connecter</button><br>
+                <div class="form-group"></div>
+                <button type="button" class="form-control btn btn-primary submit px-3" (click)="regitre()">regitre</button>
+              </div>
+              <div class="form-group d-md-flex">
+                <div class="w-50 text-left">
+                  <label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="w-50 text-md-right">
+                  <a href="#">Mot de passe oublié</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
