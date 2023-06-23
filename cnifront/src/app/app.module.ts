@@ -14,6 +14,9 @@ import {CommonModule} from '@angular/common';
 import {AccueilComponent} from './modules/accueil/accueil.component';
 import {AccueilModule} from './modules/accueil/accueil.module';
 import {AuthGuard} from "./core/guard/auth-guard.service";
+import { UsersComponent } from './modules/users/users.component';
+import { UsersModule } from './modules/users/users.module';
+import { HeaderComponent } from './shared/component/header/header.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import {AuthGuard} from "./core/guard/auth-guard.service";
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    AccueilComponent
+    AccueilComponent,
+    UsersComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,8 @@ import {AuthGuard} from "./core/guard/auth-guard.service";
     ReactiveFormsModule,
     RouterModule,
     CommonModule,
-    AccueilModule
+    AccueilModule,
+    UsersModule
 
   ],
   providers: [authInterceptorProviders,

@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  authToken: "auth-token"
+  authToken: "auth-token",
+  apiUrl:'http://localhost:8080/api/',
+  users:'users'
 };
 
 /*

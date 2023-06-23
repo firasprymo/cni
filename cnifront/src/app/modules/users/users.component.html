@@ -1,0 +1,55 @@
+<div class="page-wrapper">
+  <div class="background" >
+    <app-header ></app-header>
+
+    <main class="main bg-transparent " style="z-index: 999" >
+      <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/">Accueil</a></li>
+            <li class="breadcrumb-item active" aria-current="page">users</li>
+          </ol>
+        </div><!-- End .container -->
+      </nav><!-- End .breadcrumb-nav -->
+
+      <div class="page-content">
+        <div class="cart">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-10 mx-auto" >
+                <table class="table table-cart table-mobile">
+                  <thead>
+                  <tr>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                    <th></th>
+                  </tr>
+                  </thead>
+
+                  <tbody>
+                  <tr *ngFor="let item of users;let i=index">
+                    <td class="product-col">
+                      {{item?.username}}
+                    </td>
+                    <td >{{item?.email}}</td>
+                    <td class="quantity-col">
+                      {{item?.roles[0]?.name ==='ROLE_ADMIN'? 'Admin':'User'}}
+                    </td>
+                    <td class="remove-col">
+                      <button class="btn-remove" (click)="delete(item?.id,i)"><i class="icon-close"></i></button>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table><!-- End .table table-wishlist -->
+
+              </div><!-- End .col-lg-9 -->
+            </div><!-- End .row -->
+          </div><!-- End .container -->
+        </div><!-- End .cart -->
+      </div><!-- End .page-content -->
+    </main><!-- End .main -->
+
+  </div><!-- End .page-wrapper -->
+</div><!-- End .page-wrapper -->

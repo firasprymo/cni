@@ -10,26 +10,13 @@ import {TokenStorageService} from "../../services/token-storage.service";
 })
 export class AccueilComponent implements OnInit {
   user: any = [];
-  loggedIn: boolean = false;
 
-  constructor(private router: Router,
-              private tokenStorageService: TokenStorageService) {
+  constructor(private tokenStorageService: TokenStorageService) {
   }
 
   ngOnInit(): void {
     this.user = this.tokenStorageService.getUser()
-    console.log(this.user)
-    if (this.user) {
-      this.loggedIn = true;
-    }
+
   }
 
-  logout() {
-    localStorage.clear();
-    this.tokenStorageService.signOut();
-    sessionStorage.removeItem(environment.authToken);
-
-    sessionStorage.clear()
-    this.router.navigateByUrl("login");
-  }
 }
