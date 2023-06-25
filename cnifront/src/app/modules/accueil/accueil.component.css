@@ -1,15 +1,20 @@
 .action {
   grid-gap: 1rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 50%;
   margin: 0 auto;
 }
-
+ 
 body {
   overflow: hidden;
 }
 
 .slider {
   height: 100vh;
+}
+.slider img{
+  position: relative;
+  width: 120px;
+  height: 80px;
 }

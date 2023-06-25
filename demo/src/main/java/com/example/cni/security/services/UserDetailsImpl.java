@@ -21,15 +21,26 @@ public class UserDetailsImpl implements UserDetails {
 
   private String email;
 
+  public Boolean getAuthorized() {
+    return authorized;
+  }
+
+  public void setAuthorized(Boolean authorized) {
+    this.authorized = authorized;
+  }
+
+  private Boolean authorized;
+
   @JsonIgnore
   private String password;
 
   private Collection<? extends GrantedAuthority> authorities;
 
-  public UserDetailsImpl(Long id, String username, String email, String password,
+  public UserDetailsImpl(Long id, String username, String email, String password,Boolean authorized,
       Collection<? extends GrantedAuthority> authorities) {
     this.id = id;
     this.username = username;
+    this.authorized = authorized;
     this.email = email;
     this.password = password;
     this.authorities = authorities;
@@ -45,6 +56,7 @@ public class UserDetailsImpl implements UserDetails {
         user.getUsername(), 
         user.getEmail(),
         user.getPassword(), 
+        user.getAuthorized(),
         authorities);
   }
 
