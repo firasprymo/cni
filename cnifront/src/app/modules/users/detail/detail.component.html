@@ -1,0 +1,71 @@
+<div class="page-wrapper">
+  <app-header></app-header>
+  <main class="main">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav mb-3">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/">Accueil</a></li>
+          <li class="breadcrumb-item"><a routerLink="/users">Utilisateurs</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Détail</li>
+        </ol>
+      </div><!-- End .container -->
+    </nav><!-- End .breadcrumb-nav -->
+
+    <div class="page-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9">
+            <article class="entry entry-list">
+              <div class="row align-items-center">
+                <div class="col-md-5">
+                  <figure class="entry-media">
+                    <a >
+                      <img src="assets/images/blog/listing/post-1.jpg" alt="image desc">
+                    </a>
+                  </figure><!-- End .entry-media -->
+                </div><!-- End .col-md-5 -->
+
+                <div class="col-md-7">
+                  <div class="entry-body">
+
+                    <h2 class="entry-title">
+                      <a >Nom</a>
+                    </h2><!-- End .entry-title -->
+
+                    <div class="entry-cats">
+                      {{user?.username}}
+                    </div><!-- End .entry-cats -->
+
+                  </div>
+                  <div class="entry-body">
+
+                    <h2 class="entry-title">
+                      <a >Email</a>
+                    </h2><!-- End .entry-title -->
+
+                    <div class="entry-cats">
+                      {{user?.email}}
+                    </div><!-- End .entry-cats -->
+
+                  </div>
+                  <div class="entry-body">
+
+                    <h2 class="entry-title">
+                      <a >Role</a>
+                    </h2><!-- End .entry-title -->
+
+                    <div class="entry-cats">
+                      {{user?.roles[0].name}}
+                    </div><!-- End .entry-cats -->
+
+                  </div>
+                </div><!-- End .col-md-7 -->
+              </div><!-- End .row -->
+            </article><!-- End .entry -->
+          </div><!-- End .col-lg-9 -->
+        </div><!-- End .row -->
+      </div><!-- End .container -->
+    </div><!-- End .page-content -->
+  </main><!-- End .main -->
+
+</div><!-- End .page-wrapper -->

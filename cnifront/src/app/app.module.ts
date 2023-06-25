@@ -17,6 +17,10 @@ import {AuthGuard} from "./core/guard/auth-guard.service";
 import { UsersComponent } from './modules/users/users.component';
 import { UsersModule } from './modules/users/users.module';
 import { HeaderComponent } from './shared/component/header/header.component';
+import { AddComponent } from './modules/users/add/add.component';
+import { AddModule } from './modules/users/add/add.module';
+import { DetailComponent } from './modules/users/detail/detail.component';
+import { DetailModule } from './modules/users/detail/detail.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,9 @@ import { HeaderComponent } from './shared/component/header/header.component';
     RegisterComponent,
     AccueilComponent,
     UsersComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,9 @@ import { HeaderComponent } from './shared/component/header/header.component';
     RouterModule,
     CommonModule,
     AccueilModule,
-    UsersModule
+    UsersModule,
+    AddModule,
+    DetailModule
 
   ],
   providers: [authInterceptorProviders,

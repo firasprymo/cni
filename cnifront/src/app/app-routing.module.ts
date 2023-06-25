@@ -12,10 +12,29 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/accueil/accueil.module').then((m) => m.AccueilModule),
     canActivate: [AuthGuard]
-  },  {
+  },
+  {
     path: 'users',
     loadChildren: () =>
       import('./modules/users/users.module').then((m) => m.UsersModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'add',
+    loadChildren: () =>
+      import('./modules/users/add/add.module').then((m) => m.AddModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'detail/:id',
+    loadChildren: () =>
+      import('./modules/users/detail/detail.module').then((m) => m.DetailModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'edit/:id',
+    loadChildren: () =>
+      import('./modules/users/add/add.module').then((m) => m.AddModule),
     canActivate: [AuthGuard]
   },
   {path: "login", component: LoginComponent},

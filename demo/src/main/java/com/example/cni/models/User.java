@@ -29,10 +29,20 @@ public class User {
 	  @Size(max = 50)
 	  @Email
 	  private String email;
+	private Boolean authorized;
 
 	  @NotBlank
 	  @Size(max = 120)
 	  private String password;
+
+	public Boolean getAuthorized() {
+		return authorized;
+	}
+
+	public void setAuthorized(Boolean authorized) {
+		this.authorized = authorized;
+	}
+
 
 	  @ManyToMany(fetch = FetchType.LAZY)
 	  @JoinTable(  name = "user_roles", 
@@ -40,16 +50,17 @@ public class User {
 	        inverseJoinColumns = @JoinColumn(name = "role_id"))
 	  private Set<Role> roles = new HashSet<>();
 
-	  public User() {
-	  }
+	public User() {
+	}
 
-	  public User(String username, String email, String password) {
+	  public User(String username, String email, String password, Boolean authorized) {
 	    this.username = username;
 	    this.email = email;
 	    this.password = password;
+	    this.authorized = authorized;
 	  }
 
-	  public Long getId() {
+	public Long getId() {
 	    return id;
 	  }
 

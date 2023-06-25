@@ -1,8 +1,8 @@
 <div class="page-wrapper">
-  <div class="background" >
-    <app-header ></app-header>
+  <div class="background">
+    <app-header></app-header>
 
-    <main class="main bg-transparent " style="z-index: 999" >
+    <main class="main bg-transparent " style="z-index: 999">
       <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <div class="container">
           <ol class="breadcrumb">
@@ -15,8 +15,13 @@
       <div class="page-content">
         <div class="cart">
           <div class="container">
+            <div class="row mb-3">
+              <div class="col-lg-11 text-right">
+                <button class="btn-warning" [routerLink]="['/add']">Ajouter<i class="icon-plus"></i></button>
+              </div>
+            </div>
             <div class="row">
-              <div class="col-lg-10 mx-auto" >
+              <div class="col-lg-10 mx-auto">
                 <table class="table table-cart table-mobile">
                   <thead>
                   <tr>
@@ -33,12 +38,14 @@
                     <td class="product-col">
                       {{item?.username}}
                     </td>
-                    <td >{{item?.email}}</td>
+                    <td>{{item?.email}}</td>
                     <td class="quantity-col">
-                      {{item?.roles[0]?.name ==='ROLE_ADMIN'? 'Admin':'User'}}
+                      {{item?.roles[0]?.name === 'ROLE_ADMIN' ? 'Admin' : 'User'}}
                     </td>
-                    <td class="remove-col">
+                    <td>
                       <button class="btn-remove" (click)="delete(item?.id,i)"><i class="icon-close"></i></button>
+                      <button class="btn-remove" [routerLink]="['/edit', item?.id]"><i class="icon-edit"></i></button>
+                      <button class="btn-remove" [routerLink]="['/detail', item?.id]" ><i class="icon-info-circle"></i></button>
                     </td>
                   </tr>
                   </tbody>
@@ -46,6 +53,7 @@
 
               </div><!-- End .col-lg-9 -->
             </div><!-- End .row -->
+
           </div><!-- End .container -->
         </div><!-- End .cart -->
       </div><!-- End .page-content -->
@@ -53,3 +61,4 @@
 
   </div><!-- End .page-wrapper -->
 </div><!-- End .page-wrapper -->
+

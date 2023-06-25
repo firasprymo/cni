@@ -10,9 +10,15 @@
           <p class="text-white">نقوم بتصميم و تطوير التطبيقات التي تساعد المستخدمين و تنمي اعمالكم.</p>
           <p class="text-white">التنمية على مستوى المؤسسات جنبا الى جنب مع التصميم المتميز</p>
         </div>
-        <div class="action mt-5" *ngIf="user.roles.includes('ROLE_ADMIN')">
-          <a>التصرف في الماموريات بالخارج </a>
-          <a>التصرف في الماموريات بالخارج </a>
+        <div class="action mt-5" *ngIf="user.authorized">
+          <img style="width: 40px;
+    height: 40px;" src="assets/images/1.png" alt="Molla Logo" width="110" height="25">
+
+          <img style="width: 40px;
+    height: 40px;" src="assets/images/2.png" alt="Molla Logo" width="110" height="25">
+          <img style="width: 40px;
+    height: 40px;" src="assets/images/3.png" alt="Molla Logo" width="110" height="25">
+
         </div>
       </div>
       <!--      <img src="assets/iStock-1054785410.jpg">-->

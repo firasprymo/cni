@@ -14,7 +14,19 @@ export class UserService {
     return this.httpClient.get(`${environment.apiUrl}${environment.users}/`);
   }
 
+  getUser(id: number) {
+    return this.httpClient.get(`${environment.apiUrl}${environment.users}/${id}`);
+  }
+
   deleteUser(id: number) {
     return this.httpClient.delete(`${environment.apiUrl}${environment.users}/${id}`);
+  }
+
+  addUser(user: any) {
+    return this.httpClient.post(`${environment.apiUrl}${environment.users}/`, user);
+  }
+
+  editUser(id: number, user: any) {
+    return this.httpClient.patch(`${environment.apiUrl}${environment.users}/${id}`, user);
   }
 }

@@ -1,6 +1,6 @@
 package com.example.cni.payload.response;
 
-public class MessageResponse {
+public class MessageResponse extends Throwable {
 	  private String message;
 
 	  public MessageResponse(String message) {

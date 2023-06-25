@@ -22,7 +22,17 @@ public class SignupRequest {
 	  @Size(min = 6, max = 40)
 	  private String password;
 
-	  public String getUsername() {
+	public Boolean getAuthorized() {
+		return authorized;
+	}
+
+	public void setAuthorized(Boolean authorized) {
+		this.authorized = authorized;
+	}
+
+	private Boolean authorized;
+
+	public String getUsername() {
 	    return username;
 	  }
 

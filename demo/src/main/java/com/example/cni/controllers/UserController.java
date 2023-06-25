@@ -38,6 +38,24 @@ public class UserController {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getUser(@PathVariable("id") Long id) {
+
+        return ResponseEntity.ok(userService.getUser(id));
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<User> editUser(@PathVariable("id") Long id, @RequestBody SignupRequest user) throws MessageResponse {
+
+        return ResponseEntity.ok(userService.editUser(id, user));
+    }
+
+    @PostMapping("/")
+    public ResponseEntity<User> addUser(@RequestBody SignupRequest user) throws MessageResponse {
+
+        return ResponseEntity.ok(userService.addUser(user));
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable("id") Long id) {
         userService.deleteUser(id);
