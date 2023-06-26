@@ -9,7 +9,8 @@
         <div class="touch-container row justify-content-center">
           <div class="col-md-9 col-lg-7">
             <div class="text-center">
-              <h2 class="title mb-1">Ajouter un employé</h2><!-- End .title mb-2 -->
+              <h2 class="title mb-1" *ngIf="!edit">Ajouter un employé</h2><!-- End .title mb-2 -->
+              <h2 class="title mb-1" *ngIf="edit">Modifier un employé</h2><!-- End .title mb-2 -->
             </div><!-- End .text-center -->
 
             <form [formGroup]="formUser" class="contact-form mb-2">
@@ -32,9 +33,25 @@
                          required>
                 </div><!-- End .col-sm-4 -->
 
-                <div class="col-sm-12">
+                <div class="col-sm-4">
+                  <label for="authorized1">Authorisation pour button 1</label>
+                  <select name="size" id="authorized1" class="form-control" formControlName="authorized1">
+                    <option value="true" selected="selected">Authorisé</option>
+                    <option value="false">N'est pas authorisé</option>
+                  </select>
+                </div>
+                <div class="col-sm-4">
+                  <label for="authorized2">Authorisation pour button 2</label>
 
-                  <select name="size" id="authorized" class="form-control" formControlName="authorized">
+                  <select name="size" id="authorized2" class="form-control" formControlName="authorized2">
+                    <option value="true" selected="selected">Authorisé</option>
+                    <option value="false">N'est pas authorisé</option>
+                  </select>
+                </div>
+                <div class="col-sm-4">
+                  <label for="authorized3">Authorisation pour button 3</label>
+
+                  <select name="size" id="authorized3" class="form-control" formControlName="authorized3">
                     <option value="true" selected="selected">Authorisé</option>
                     <option value="false">N'est pas authorisé</option>
                   </select>

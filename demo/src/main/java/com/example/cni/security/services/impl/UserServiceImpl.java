@@ -52,7 +52,11 @@ public class UserServiceImpl implements UserService {
         // Create new user's account
         User user = new User(signUpRequest.getUsername(),
                 signUpRequest.getEmail(),
-                encoder.encode(signUpRequest.getPassword()), signUpRequest.getAuthorized());
+                encoder.encode(signUpRequest.getPassword())
+                , signUpRequest.getAuthorized1()
+                , signUpRequest.getAuthorized2()
+                , signUpRequest.getAuthorized3()
+        );
 
         Set<String> strRoles = signUpRequest.getRole();
         Set<Role> roles = new HashSet<>();
@@ -92,7 +96,9 @@ public class UserServiceImpl implements UserService {
         );
         user.setUsername(signUpRequest.getUsername());
         user.setEmail(signUpRequest.getEmail());
-        user.setAuthorized(signUpRequest.getAuthorized());
+        user.setAuthorized1(signUpRequest.getAuthorized1());
+        user.setAuthorized2(signUpRequest.getAuthorized2());
+        user.setAuthorized3(signUpRequest.getAuthorized3());
         Set<String> strRoles = signUpRequest.getRole();
         Set<Role> roles = new HashSet<>();
         if (strRoles == null) {

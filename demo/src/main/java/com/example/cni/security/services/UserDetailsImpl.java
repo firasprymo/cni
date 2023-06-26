@@ -21,26 +21,24 @@ public class UserDetailsImpl implements UserDetails {
 
   private String email;
 
-  public Boolean getAuthorized() {
-    return authorized;
-  }
 
-  public void setAuthorized(Boolean authorized) {
-    this.authorized = authorized;
-  }
 
-  private Boolean authorized;
+  private Boolean authorized1;
+  private Boolean authorized2;
+  private Boolean authorized3;
 
   @JsonIgnore
   private String password;
 
   private Collection<? extends GrantedAuthority> authorities;
 
-  public UserDetailsImpl(Long id, String username, String email, String password,Boolean authorized,
+  public UserDetailsImpl(Long id, String username, String email, String password,Boolean authorized1,Boolean authorized2,Boolean authorized3,
       Collection<? extends GrantedAuthority> authorities) {
     this.id = id;
     this.username = username;
-    this.authorized = authorized;
+    this.authorized1 = authorized1;
+    this.authorized2 = authorized2;
+    this.authorized3 = authorized3;
     this.email = email;
     this.password = password;
     this.authorities = authorities;
@@ -56,7 +54,9 @@ public class UserDetailsImpl implements UserDetails {
         user.getUsername(), 
         user.getEmail(),
         user.getPassword(), 
-        user.getAuthorized(),
+        user.getAuthorized1(),
+        user.getAuthorized2(),
+        user.getAuthorized3(),
         authorities);
   }
 
@@ -72,7 +72,27 @@ public class UserDetailsImpl implements UserDetails {
   public String getEmail() {
     return email;
   }
+  public Boolean getAuthorized1() {
+    return authorized1;
+  }
 
+  public void setAuthorized1(Boolean authorized1) {
+    this.authorized1 = authorized1;
+  }
+  public Boolean getAuthorized2() {
+    return authorized2;
+  }
+
+  public void setAuthorized2(Boolean authorized2) {
+    this.authorized2 = authorized2;
+  }
+  public Boolean getAuthorized3() {
+    return authorized3;
+  }
+
+  public void setAuthorized3(Boolean authorized3) {
+    this.authorized3 = authorized3;
+  }
   @Override
   public String getPassword() {
     return password;

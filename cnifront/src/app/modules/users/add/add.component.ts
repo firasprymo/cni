@@ -32,7 +32,9 @@ export class AddComponent implements OnInit {
       username: [''],
       email: [''],
       password: [''],
-      authorized: [''],
+      authorized1: [''],
+      authorized2: [''],
+      authorized3: [''],
       roles: [''],
     })
   }
@@ -74,7 +76,9 @@ export class AddComponent implements OnInit {
       this.formUser.patchValue({
         username: res.username,
         email: res.email,
-        authorized: res.authorized,
+        authorized1: res.authorized1,
+        authorized2: res.authorized2,
+        authorized3: res.authorized3,
         roles: res.roles[0].name,
       })
       console.log(res)

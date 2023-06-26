@@ -29,18 +29,33 @@ public class User {
 	  @Size(max = 50)
 	  @Email
 	  private String email;
-	private Boolean authorized;
+	private Boolean authorized1;
+	private Boolean authorized2;
+	private Boolean authorized3;
 
 	  @NotBlank
 	  @Size(max = 120)
 	  private String password;
 
-	public Boolean getAuthorized() {
-		return authorized;
+	public Boolean getAuthorized3() {
+		return authorized3;
 	}
 
-	public void setAuthorized(Boolean authorized) {
-		this.authorized = authorized;
+	public void setAuthorized3(Boolean authorized3) {
+		this.authorized3 = authorized3;
+	}public Boolean getAuthorized2() {
+		return authorized2;
+	}
+
+	public void setAuthorized2(Boolean authorized2) {
+		this.authorized2 = authorized2;
+	}
+	public Boolean getAuthorized1() {
+		return authorized1;
+	}
+
+	public void setAuthorized1(Boolean authorized1) {
+		this.authorized1 = authorized1;
 	}
 
 
@@ -53,11 +68,14 @@ public class User {
 	public User() {
 	}
 
-	  public User(String username, String email, String password, Boolean authorized) {
+	  public User(String username, String email, String password, Boolean authorized1,
+				  Boolean authorized2, Boolean authorized3) {
 	    this.username = username;
 	    this.email = email;
 	    this.password = password;
-	    this.authorized = authorized;
+	    this.authorized1 = authorized1;
+	    this.authorized2 = authorized2;
+	    this.authorized3 = authorized3;
 	  }
 
 	public Long getId() {

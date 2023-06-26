@@ -10,11 +10,11 @@
           <p class="text-white">نقوم بتصميم و تطوير التطبيقات التي تساعد المستخدمين و تنمي اعمالكم.</p>
           <p class="text-white">التنمية على مستوى المؤسسات جنبا الى جنب مع التصميم المتميز</p>
         </div>
-        <div class="action mt-5" *ngIf="user.authorized">
-          <img  src="assets/images/1.png" alt="Molla Logo" width="110" height="25">
+        <div class="action mt-5" >
+          <img *ngIf="user.authorized1" src="assets/images/1.png" alt="Molla Logo" width="110" height="25">
 
-          <img  src="assets/images/2.jpg" alt="Molla Logo" width="110" height="25">
-          <img  src="assets/images/3.jpg" alt="Molla Logo" width="110" height="25">
+          <img *ngIf="user.authorized2" src="assets/images/2.jpg" alt="Molla Logo" width="110" height="25">
+          <img *ngIf="user.authorized3" src="assets/images/3.jpg" alt="Molla Logo" width="110" height="25">
 
         </div>
       </div>

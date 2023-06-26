@@ -10,15 +10,23 @@ public class JwtResponse {
     private String email;
 
 
-    private Boolean authorized;
+    private Boolean authorized1;
+    private Boolean authorized2;
+    private Boolean authorized3;
     private List<String> roles;
 
-    public JwtResponse(String accessToken, Long id, String username, String email, Boolean authorized, List<String> roles) {
+    public JwtResponse(String accessToken, Long id, String username, String email,
+                       Boolean authorized1,
+                       Boolean authorized2,
+                       Boolean authorized3,
+                       List<String> roles) {
         this.token = accessToken;
         this.id = id;
         this.username = username;
         this.email = email;
-        this.authorized = authorized;
+        this.authorized1 = authorized1;
+        this.authorized2 = authorized2;
+        this.authorized3 = authorized3;
         this.roles = roles;
     }
 
@@ -30,12 +38,26 @@ public class JwtResponse {
         this.token = accessToken;
     }
 
-    public Boolean getAuthorized() {
-        return authorized;
+    public Boolean getAuthorized1() {
+        return authorized1;
     }
 
-    public void setAuthorized(Boolean authorized) {
-        this.authorized = authorized;
+    public void setAuthorized1(Boolean authorized1) {
+        this.authorized1 = authorized1;
+    }
+    public Boolean getAuthorized2() {
+        return authorized2;
+    }
+
+    public void setAuthorized2(Boolean authorized2) {
+        this.authorized2 = authorized2;
+    }
+    public Boolean getAuthorized3() {
+        return authorized3;
+    }
+
+    public void setAuthorized3(Boolean authorized3) {
+        this.authorized3 = authorized3;
     }
 
     public String getTokenType() {
