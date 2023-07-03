@@ -100,7 +100,7 @@ public class AuthController {
             ,signUpRequest.getAuthorized2()
             ,signUpRequest.getAuthorized3());
 
-    Set<String> strRoles = signUpRequest.getRole();
+    Set<String> strRoles = signUpRequest.getRoles();
     Set<Role> roles = new HashSet<>();
 
     if (strRoles == null) {

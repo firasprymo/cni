@@ -58,7 +58,7 @@ public class UserServiceImpl implements UserService {
                 , signUpRequest.getAuthorized3()
         );
 
-        Set<String> strRoles = signUpRequest.getRole();
+        Set<String> strRoles = signUpRequest.getRoles();
         Set<Role> roles = new HashSet<>();
 
         if (strRoles == null) {
@@ -99,7 +99,7 @@ public class UserServiceImpl implements UserService {
         user.setAuthorized1(signUpRequest.getAuthorized1());
         user.setAuthorized2(signUpRequest.getAuthorized2());
         user.setAuthorized3(signUpRequest.getAuthorized3());
-        Set<String> strRoles = signUpRequest.getRole();
+        Set<String> strRoles = signUpRequest.getRoles();
         Set<Role> roles = new HashSet<>();
         if (strRoles == null) {
             Role userRole = roleRepository.findByName(ERole.ROLE_ADMIN)

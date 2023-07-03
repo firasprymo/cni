@@ -40,13 +40,9 @@ export class AddComponent implements OnInit {
   }
 
   addUser() {
-    const roles = [
-      {
-        name: this.formUser.value.roles
-      }
-    ];
+    const rolesArray = Array.from(this.formUser.value.roles);
     this.formUser.patchValue({
-      roles
+      roles: [this.formUser.value.roles]
     })
     this.userService.addUser(this.formUser.value).subscribe(res => {
       console.log(res)
@@ -55,13 +51,9 @@ export class AddComponent implements OnInit {
   }
 
   editUser() {
-    const roles = [
-      {
-        name: this.formUser.value.roles
-      }
-    ];
+    const rolesArray = Array.from(this.formUser.value.roles);
     this.formUser.patchValue({
-      roles
+      roles: rolesArray
     })
     this.userService.editUser(this.id, this.formUser.value).subscribe(res => {
       console.log(res)
